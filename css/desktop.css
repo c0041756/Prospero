@@ -1,0 +1,30 @@
+.burgerMenuContainer {
+    display:none;
+}
+
+
+/* main content */
+
+main{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.articles{
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+}
+
+.articles > div{
+    flex:1 1 25%;
+    padding: 0;
+    margin: 0 20px;
+}
+
+.articles > div:first-child{
+    margin-left: 0;
+}
+
+.articles > div:last-child{
+    margin-right: 0;
+}

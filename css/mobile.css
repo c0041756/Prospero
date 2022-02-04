@@ -9,7 +9,46 @@ body{
     margin: 0;
 }
 
+/* header/nav styling */
 
+.headerContainer{
+    background: black;
+}
+
+header h2{
+    color: white;
+    margin: 0;
+}
+
+header div {
+    padding: 5px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav{
+    flex: 1 1 100%;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 8px 5px;
+    border-bottom: 1px solid ; color: white;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
 /* main styling */
 
 main{
@@ -33,8 +72,10 @@ main{
     width: 100%;
 }
 
+/* footer styling */
+
 footer{
-    background: rgba(0, 0, 0, 0.8);
+    background: black;
     margin-top: 10px;
     padding: 10px;
 }

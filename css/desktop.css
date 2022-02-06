@@ -18,6 +18,7 @@ main{
     margin: auto;
 }
 
+/* navigation bar styling */
 nav{
     height: 80px;
     flex: 1 1 80%;
@@ -41,6 +42,8 @@ nav ul li a:hover{
     border-bottom: 3px solid white;
 }
 
+/* article styling */
+
 .articles{
     flex-wrap: nowrap;
     font-size: 1.2rem;
@@ -59,3 +62,43 @@ nav ul li a:hover{
 .articles > div:last-child{
     margin-right: 0;
 }
+
+
+/* footer styling */
+
+.footerUl li{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footerUl{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.footerUl ul{
+    display: flex;
+}
+
+.footerUl ul li{
+    padding: 4px;
+    border-bottom: none;
+}
+
+.footerUl ul li a{
+    margin: 15px;
+    border: none;
+}
+
+.footerUl ul li a{
+    text-decoration: none;
+}
+
+.footerUl ul li a{
+    color: white;
+}
+
+.footerUl ul li a:hover{
+    border-bottom: 3px solid white;
+}
+

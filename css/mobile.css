@@ -88,3 +88,21 @@ footer > div > p{
     text-align: center;
     font-size: 0.8rem;
 }
+
+.footerUl ul li a{
+    text-decoration: none;
+}
+
+.footerUl ul li a{
+    color: white;
+}
+
+.footerUl ul li a:hover{
+    border-bottom: 3px solid white;
+}
+
+.footerUl li{
+    margin: 0 auto;
+    text-align: center;
+    padding: 1px;
+}

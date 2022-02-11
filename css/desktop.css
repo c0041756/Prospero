@@ -83,6 +83,15 @@ nav ul li a:hover{
     text-align: justify;
 }
 
+/*Contact Page Styling */
+.contactClassDetails{
+    text-align: center;
+}
+
+.contactH1{
+    text-align: center;
+}
+
 /* footer styling */
 
 .footerUl li{

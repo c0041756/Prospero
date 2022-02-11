@@ -67,6 +67,21 @@ nav ul li a:hover{
     margin-right: 0;
 }
 
+/* Support Articles Styling */
+
+.supportH1{
+    text-align: center;
+}
+
+.supportArticles{
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.supportArticles >ul >li{
+    list-style: disc;
+    text-align: justify;
+}
 
 /* footer styling */
 

@@ -17,11 +17,11 @@
              if(navBarStatus){
                 navBarStatus = false;
                 navBar.style.height = "0px";
-                burgerMenu.setAttribute("src", "public/images/burgerMenu.jpg");
+                burgerMenu.setAttribute("src", "images/burgerMenu.jpg");
              } else {
                  navBarStatus = true;
                  navBar.style.height = navHeight + "px";
-                 burgerMenu.setAttribute("src", "public/images/burgerMenuClose.jpg");
+                 burgerMenu.setAttribute("src", "images/burgerMenuClose.jpg");
              }
     });
     }

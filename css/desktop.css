@@ -130,3 +130,47 @@ nav ul li a:hover{
     border-bottom: 3px solid white;
 }
 
+
+/* article styling for the search page */
+
+
+.timesheetHeading{
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.timesheetText{
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.searchArticles{
+    flex-wrap: nowrap;
+    font-size: 1.0rem;
+    margin: 20px auto;
+}
+
+.searchArticles > div{
+    flex:1 1 25%;
+    width: 100%;
+    /* margin-left: 25px auto;
+    margin-right: 25px auto; */
+}
+
+/* .SearchArticles > div:first-child{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.searchArticles > div:last-child{
+    width: 75%;
+    margin: 0 auto;
+} */
+
+
+.tsubmitButtonDiv{
+    width: 75%;
+    margin: 0 auto;
+}

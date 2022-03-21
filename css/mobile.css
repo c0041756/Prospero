@@ -108,3 +108,33 @@ footer > div > p{
     text-align: center;
     padding: 1px;
 }
+
+
+.timesheetHeading{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.timesheetText{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.searchArticles{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+.searchArticles > div{
+ flex: 1 1 50%;
+ padding-left: 10%;
+ padding-right: 10%;
+}
+
+.submitButtonDiv{
+    padding-left: 50%;
+    padding-right: 50%;
+}

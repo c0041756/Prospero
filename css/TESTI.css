@@ -1,0 +1,176 @@
+.burgerMenuContainer {
+    display:none;
+}
+
+.headerContainer{
+    padding-top: 20px;
+}
+
+header{
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* main content */
+
+main{
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* navigation bar styling */
+nav{
+    height: 80px;
+    flex: 1 1 80%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li{
+    padding: 4px;
+    border-bottom: none;
+}
+
+nav ul li a{
+    margin: 0 15px;
+    border: none;
+}
+
+nav ul li a:hover{
+    border-bottom: 3px solid white;
+}
+
+
+
+/* article styling */
+
+.articles{
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+}
+
+.articles > div{
+    flex:1 1 25%;
+    padding: 0;
+    margin: 0 20px;
+}
+
+.articles > div:first-child{
+    margin-left: 0;
+}
+
+.articles > div:last-child{
+    margin-right: 0;
+}
+
+/* Support Articles Styling */
+
+.supportH1{
+    text-align: center;
+}
+
+.supportArticles{
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.supportArticles >ul >li{
+    list-style: disc;
+    text-align: justify;
+}
+
+/*Contact Page Styling */
+.contactClassDetails{
+    text-align: center;
+}
+
+.contactH1{
+    text-align: center;
+}
+
+/* footer styling */
+
+.footerUl li{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footerUl{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.footerUl ul{
+    display: flex;
+}
+
+.footerUl ul li{
+    padding: 4px;
+    border-bottom: none;
+}
+
+.footerUl ul li a{
+    margin: 15px;
+    border: none;
+}
+
+.footerUl ul li a{
+    text-decoration: none;
+}
+
+.footerUl ul li a{
+    color: white;
+}
+
+.footerUl ul li a:hover{
+    border-bottom: 3px solid white;
+}
+
+
+/* article styling for the search page */
+
+
+.timesheetHeading{
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.timesheetText{
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.searchArticles{
+    flex-wrap: nowrap;
+    font-size: 1.0rem;
+    margin: 20px auto;
+}
+
+.searchArticles > div{
+    flex:1 1 25%;
+    width: 100%;
+    /* margin-left: 25px auto;
+    margin-right: 25px auto; */
+}
+
+/* .SearchArticles > div:first-child{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.searchArticles > div:last-child{
+    width: 75%;
+    margin: 0 auto;
+} */
+
+
+.tsubmitButtonDiv{
+    width: 75%;
+    margin: 0 auto;
+}

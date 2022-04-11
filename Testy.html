@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospero Software</title>
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/desktop.css" media="only screen and (min-width: 690px")>
+</head>
+<body>
+    <div class="container">
+        <div class="headerContainer">
+            <header>
+                <a href="./index.html" class="prosperoIcon"> <img src="./images/prosperoLong.png" alt="Prospero Icon" style="width: 100vw; max-width: 250px;"></a>
+                <div>
+                    <h2>Version 1.2</h2>
+                </div>
+                
+                <div class="burgerMenuContainer">
+                    <img src="./images/burgerMenu.jpg" alt="burgerMenu" width="30px" id="burgerMenu">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./timesheets.html">Timesheets</a></li>
+                        <li><a href="./logs.html">Logs</a></li>
+                        <li><a href="./knowledgebase.html">Knowledgebase</a></li>
+                        <li><a href="./support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <main>
+        <h1 class="timesheetHeading">Timesheet Search</h1>
+
+        <div class="timesheetText">
+          <p>Use the fields below to specify fields for a search</p>
+        </div>
+
+       <div class="searchArticles">
+        
+        <div>
+            
+	<div class="container">
+		<h1>Consultant List</h1>
+		<ul id="list"></ul>
+	</div>
+
+    <button type="button" id="fetchBtn"
+			class="btn btn-primary">
+		Search
+	</button>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js,
+		then Bootstrap JS -->
+	<script>
+		let fetchBtn = document.getElementById("fetchBtn");
+
+		fetchBtn.addEventListener("click", buttonclickhandler);
+
+		function buttonclickhandler() {
+
+			// Instantiate an new XHR Object
+			const xhr = new XMLHttpRequest();
+
+			// Open an obejct (GET/POST, PATH,
+			// ASYN-TRUE/FALSE)
+			xhr.open("GET",
+"http://dummy.restapiexample.com/api/v1/employees", true);
+
+
+
+
+			// When response is ready
+			xhr.onload = function () {
+				if (this.status === 200) {
+
+					// Changing string data into JSON Object
+					obj = JSON.parse(this.responseText);
+
+					// Getting the ul element
+					let list = document.getElementById("list");
+					str = ""
+					for (key in obj.data) {
+						str +=
+						`<li>${obj.data[key].employee_name}</li>`;
+					}
+					list.innerHTML = str;
+				}
+				else {
+					console.log("File not found");
+				}
+			}
+			xhr.send();
+		}
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity=
+"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous">
+	</script>
+	
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity=
+"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous">
+	</script>
+	
+	<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity=
+"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous">
+	</script>
+        </div>
+
+<br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        </main>
+        <footer>
+            <Div class="footerUl">
+            <ul>
+                <li><a href="./footerLinks.html">Terms and Conditions</a></li>
+                <li><a href="./footerLinks.html">Cookies Policy</a></li>
+                <li><a href="./footerLinks.html">Privacy</a></li>
+                <li><a href="./footerLinks.html">Accessibility</a></li>
+                <li> <a href="./contact.html">Contact</a> </li>
+            </ul>
+            </Div>
+
+
+
+
+                <div>
+                 <p>&copy; 2022 Prospero</p>
+                </div> 
+        </footer>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

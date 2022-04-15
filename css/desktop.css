@@ -44,6 +44,11 @@ nav ul li a:hover{
     border-bottom: 3px solid white;
 }
 
+.textAnchors{
+    text-decoration: none;
+    color: black;
+}
+
 
 
 /* article styling */

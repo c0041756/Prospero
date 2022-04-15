@@ -39,19 +39,12 @@
           <p>Use the fields below to specify fields for a search</p>
         </div>
 
-       
-                    
-	<div class="container">
-		<h1>Consultant List</h1>
-		<ul id="list"></ul>
-	</div>
-
-    <div class="searchArticles">
-
-       <div>
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
-      <label for="lname">Last name:</label><br>
+       <div class="searchArticles">
+        
+        <div>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br>
+            <label for="lname">Last name:</label><br>
             <input type="text" id="lname" name="lname" value=""><br>
             <label for="employer">Employer:</label><br>
             <input type="text" id="employer" name="employer" value=""><br>
@@ -65,137 +58,129 @@
             <label for="uniqIdEmployer">Unique Identifier Employer:</label><br>
             <input type="text" id="uniqIdEmployer" name="uniqIdEmployer" value=""><br>
         </div>
-    </div> 
+        
+        </div>
+        <button type="button" id="fetchBtn"
+        class="btn btn-primary">
+    Search
+</button>
 
-    <button type="button" id="fetchBtn"
-			class="btn btn-primary">
-		Search
-	</button>
+<button type="button" id="GetListfetchBtn"
+        class="btn btn-primary">
+    Get List
+</button>
 
-    <button type="button" id="getListFetchBtn"
-			class="btn btn-primary">
-		Get List
-	</button>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js,
+    then Bootstrap JS -->
+<script>
+    let getListFetchBtn = document.getElementById("GetListfetchBtn");
+    getListFetchBtn.addEventListener("click", buttonclickhandlerforlist);
 
-    <div class="resultBox">
+    function buttonclickhandlerforlist(){
+        // Instantiate an new XHR Object
+        const xhr = new XMLHttpRequest();
+
+    // Open an obejct (GET/POST, PATH,
+    // ASYN-TRUE/FALSE)
+    xhr.open("GET",
+    "http://dummy.restapiexample.com/api/v1/employees", true);
 
 
-    </div>
-    
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js,
-		then Bootstrap JS -->
-	<script>
-        let getListFetchBtn = document.getElementById("getListFetchBtn");
-        getListFetchBtn.addEventListener("click", buttonclickhandlerforlist);
 
-        function buttonclickhandlerforlist(){
-            // Instantiate an new XHR Object
-			const xhr = new XMLHttpRequest();
+
+    // When response is ready
+xhr.onload = function () {
+if (this.status === 200) {
+
+    // Changing string data into JSON Object
+    obj = JSON.parse(this.responseText);
+          
+    str = ""
+    for (key in obj.data) {
+           
+         str += 
+         `<li>${obj.data[key].employee_name}</li>`;
+        
+    }
+    list.innerHTML = str;
+}
+else {
+    console.log("File not found");
+}
+}
+    xhr.send();
+    }
+
+    let fetchBtn = document.getElementById("fetchBtn");
+
+    fetchBtn.addEventListener("click", buttonclickhandler);
+
+    function buttonclickhandler() {
+
+        // Instantiate an new XHR Object
+        const xhr = new XMLHttpRequest();
 
         // Open an obejct (GET/POST, PATH,
         // ASYN-TRUE/FALSE)
         xhr.open("GET",
-        "http://dummy.restapiexample.com/api/v1/employees", true);
-
-
-
-
-        // When response is ready
-    xhr.onload = function () {
-    if (this.status === 200) {
-
-        // Changing string data into JSON Object
-        obj = JSON.parse(this.responseText);
-              
-        str = ""
-        for (key in obj.data) {
-               
-             str += 
-             `<li>${obj.data[key].employee_name}</li>`;
-            
-        }
-        list.innerHTML = str;
-    }
-    else {
-        console.log("File not found");
-    }
-    }
-        xhr.send();
-        }
-
-		let fetchBtn = document.getElementById("fetchBtn");
-
-		fetchBtn.addEventListener("click", buttonclickhandler);
-
-		function buttonclickhandler() {
-
-			// Instantiate an new XHR Object
-			const xhr = new XMLHttpRequest();
-
-			// Open an obejct (GET/POST, PATH,
-			// ASYN-TRUE/FALSE)
-			xhr.open("GET",
 "http://dummy.restapiexample.com/api/v1/employees", true);
 
 
 
 
-			// When response is ready
-			xhr.onload = function () {
-				if (this.status === 200) {
+        // When response is ready
+        xhr.onload = function () {
+            if (this.status === 200) {
 
-					// Changing string data into JSON Object
-					obj = JSON.parse(this.responseText);
+                // Changing string data into JSON Object
+                obj = JSON.parse(this.responseText);
 
-                 	// Getting the ul element
-                    var element = document.getElementById("fname");
-                 
-					str = ""
-					for (key in obj.data) {
-                        if(obj.data[key].employee_name.includes(element.value)){
-                            console.log(obj.data[key].employee_name)
-                        
-               
-						// str += 
-                        // `<li>${obj.data[key].employee_name}</li>`;
+                 // Getting the ul element
+                var element = document.getElementById("fname");
+             
+                str = ""
+                for (key in obj.data) {
+                    if(obj.data[key].employee_name.includes(element.value)){
+                        console.log(obj.data[key].employee_name)
+                    
+           
+                    // str += 
+                    // `<li>${obj.data[key].employee_name}</li>`;
 
-                        str = `<li>${obj.data[key].employee_name}</li>`;
-                        }
-					}
-					list.innerHTML = str;
-				}
-				else {
-					console.log("File not found");
-				}
-			}
-			xhr.send();
+                    str = `<li>${obj.data[key].employee_name}</li>`;
+                    }
+                }
+                list.innerHTML = str;
+            }
+            else {
+                console.log("File not found");
+            }
         }
-	</script>
+        xhr.send();
+    }
+</script>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity=
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity=
 "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous">
-	</script>
-	
-	<script src=
+    crossorigin="anonymous">
+</script>
+
+<script src=
 "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity=
+    integrity=
 "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous">
-	</script>
-	
-	<script src=
+    crossorigin="anonymous">
+</script>
+
+<script src=
 "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity=
+    integrity=
 "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous">
-	</script>
-        </div>
-
-<br>
-
+    crossorigin="anonymous">
+</script>
+    </div>
         <br>
         <br>
         <br>
@@ -211,10 +196,6 @@
                 <li> <a href="./contact.html">Contact</a> </li>
             </ul>
             </Div>
-
-
-
-
                 <div>
                  <p>&copy; 2022 Prospero</p>
                 </div> 

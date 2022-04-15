@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description for search engines -->
+    <meta name="description" content="Prospero Timesheet System. Marcano and Withnall">
+
+    <!-- Title of web page -->
     <title>Prospero Software</title>
+
+<!-- elements link to different style sheets. Desktop Version has 690 pixel parameter to trigger which CSS styling is initiated -->
     <link rel="stylesheet" href="./css/mobile.css">
     <link rel="stylesheet" href="./css/desktop.css" media="only screen and (min-width: 690px")>
 </head>
 <body>
+
+    <!-- Top Menu bar elements -->
     <div class="container">
         <div class="headerContainer">
             <header>
+
+                <!-- Logo link which resolves back to index page. Alt is important to fill in as this allows for Accessibility. Viewport to keep logo in place and scalable with page -->
                 <a href="./index.html" class="prosperoIcon"> <img src="./images/prosperoLong.png" alt="Prospero Icon" style="width: 100vw; max-width: 250px;"></a>
                 <div>
                     <h2>Version 1.2</h2>
                 </div>
-                
+               <!-- Burger menu logo and menu which is called upon when mobile stylesheet is in effect  -->
                 <div class="burgerMenuContainer">
                     <img src="./images/burgerMenu.jpg" alt="burgerMenu" width="30px" id="burgerMenu">
                 </div>
                 <nav>
                     <ul>
+                        <!-- list items for menu -->
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./timesheets.html">Timesheets</a></li>
                         <li><a href="./logs.html">Logs</a></li>
@@ -46,7 +57,7 @@
 	</div>
 
     <div class="searchArticles">
-
+<!-- field boxes and input for user to specify search criteria, along with valid ID for logic -->
        <div>
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" value=""><br>
@@ -65,7 +76,7 @@
             <input type="text" id="uniqIdEmployer" name="uniqIdEmployer" value=""><br>
         </div>
     </div> 
-
+<!-- manual element in which to link to Ajax logic for api call -->
     <button type="button" id="fetchBtn"
 			class="btn btn-primary">
 		Search
@@ -200,6 +211,8 @@
         <br>
         <br>
         </main>
+
+    <!-- footer menu and links in list -->
         <footer>
             <Div class="footerUl">
             <ul>
@@ -213,12 +226,13 @@
 
 
 
-
+<!-- Copy right symbol and copyright -->
                 <div>
                  <p>&copy; 2022 Prospero</p>
                 </div> 
         </footer>
     </div>
+    <!-- script for burger menu transition -->
     <script src="./app.js"></script>
 </body>
 </html>

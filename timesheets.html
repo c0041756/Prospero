@@ -193,7 +193,7 @@
                             //present results within the list element, in the format of first name, space, lastname. We are only trying to pull the first consultant in the list.
                             let consultantname = jsonResponse.results.consultants[0].first_name + " " + jsonResponse.results.consultants[0].last_name;
                             //construct a URL with the call of the timesheets related to the consultant ID
-                            let timesheetUrl = "http://localhost:3000/v1/timesheetdetails?consultant_ref=" + jsonResponse.results.consultants[0].consultant_id;
+                            let timesheetUrl = "http://localhost:3000/v1/timesheetdetails?consultant_ref=" + jsonResponse.results.consultants[0].personnel_reference_number;
                             //constructs hyperlink to request timesheets on consultant.
                             list.innerHTML = '<a href="' + timesheetUrl + '" id="searchFullName">' + consultantname + '</a>';
                         } else {

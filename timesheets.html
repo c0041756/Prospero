@@ -117,8 +117,6 @@
 
                     <input type="date" id="dateSearch" name="dateSearch" value=""><br><br>
 
-                    <p><a href="http://localhost:3000/v1/consultantids?firstname=david">Click here to search for
-                            consultants named "David"</a></p>
 
                 </div>
 
@@ -195,7 +193,7 @@
                             //present results within the list element, in the format of first name, space, lastname. We are only trying to pull the first consultant in the list.
                             let consultantname = jsonResponse.results.consultants[0].first_name + " " + jsonResponse.results.consultants[0].last_name;
                             //construct a URL with the call of the timesheets related to the consultant ID
-                            let timesheetUrl = "http://localhost:3000/v1/timesheetdetails?consultantid=" + jsonResponse.results.consultants[0].consultant_id;
+                            let timesheetUrl = "http://localhost:3000/v1/timesheetdetails?consultant_ref=" + jsonResponse.results.consultants[0].consultant_id;
                             //constructs hyperlink to request timesheets on consultant.
                             list.innerHTML = '<a href="' + timesheetUrl + '" id="searchFullName">' + consultantname + '</a>';
                         } else {
